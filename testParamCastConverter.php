@@ -5,7 +5,7 @@ use \ReflectionClass;
 use \ReflectionParameter;
 
 class paramConverter {
-  public static function resolveParameter($refParam)
+	public static function resolveParameter($refParam)
 	{
 		$export = ReflectionParameter::export(
 		   array(
@@ -73,6 +73,11 @@ class arrayCast extends \ArrayObject implements Cast {
 	public function toCast($element)
 	{
 	}
+
+	public function __invoke()
+	{
+		return $this->getArrayCopy();
+	}
 }
 
 // Hack for paramConverter
@@ -82,7 +87,7 @@ class etsi
 {
 	public function tuFait(arrayCast $tableau)
 	{
-		echo implode(",", $tableau->getArrayCopy());
+		echo implode(",", $tableau());
 	}
 }
 
