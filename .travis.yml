@@ -12,4 +12,8 @@ before_script:
   - wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
 script: php mageekguy.atoum.phar -d tests/units
 
+notifications:
+  email:
+    - jpasqualini75@gmail.com
+
 
