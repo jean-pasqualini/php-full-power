@@ -6,4 +6,6 @@ Use aop for hack possibility of php for inovate alternative more possibility wit
 Quality code
 ============
 
+<img src="https://travis-ci.org/onetest/php-full-power.png"/>
+
 Travis ci report online
