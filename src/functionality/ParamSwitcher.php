@@ -10,7 +10,7 @@ class ParamSwitcher {
 
     public static function before(AopJoinPoint $joinPoint)
     {
-        $arguments = $joinPoint->getArguments();
+        $arguments = array_filter($joinPoint->getArguments(), function($var) { return null !== $var; });
 
         if(count($arguments) == 1)
         {

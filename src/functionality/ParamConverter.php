@@ -14,19 +14,15 @@ class ParamConverter {
     {
         $arguments = $joinPoint->getArguments();
 
-        //echo "//".$joinPoint->getClassName()."//";
-
         $class = new ReflectionClass($joinPoint->getClassName());
 
         $methode = $class->getMethod($joinPoint->getMethodName());
 
         foreach($methode->getParameters() as $key => $parameter)
         {
-            $type = lib\Tools::resolveParameter($parameter);
+            $classTypeParameter = $parameter->getClass();
 
-            $classTypeParameter = new ReflectionClass($type);
-
-            if($classTypeParameter->implementsInterface("\\fullPhp\\Cast"))
+            if(null !== $classTypeParameter && $classTypeParameter->implementsInterface("\\fullPhp\\interfaces\\Converter"))
             {
                 $arguments[$key] = $classTypeParameter->getMethod("fromCast")->invoke(null, $arguments[$key]);
             }
@@ -39,7 +35,6 @@ class ParamConverter {
             }
             
         }
-
         $joinPoint->setArguments($arguments);
 
     }

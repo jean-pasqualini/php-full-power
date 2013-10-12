@@ -7,6 +7,7 @@ $phpFull = new lib\PhpFullPower();
 
 $phpFull->addFunctionality(new functionality\ParamConverter());
 $phpFull->addFunctionality(new functionality\ParamSwitcher());
+$phpFull->addFunctionality(new functionality\Suggest());
 
 $phpFull->enable();
 
@@ -26,9 +27,9 @@ class ArrayObject extends \ArrayObject implements interfaces\Converter {
 
 class test
 {
-    public function tuFait(ArrayObject $tableau)
+    public function testParamConverter(ArrayObject $tableau)
     {
-        echo implode(",", $tableau->getArrayCopy());
+        //echo $tableau->count();
     }
 
     public function testSwitcher($x, $y)
@@ -38,7 +39,7 @@ class test
 }
 
 $test = new test();
-//$non->tuFait("sdqd");
+$test->testParamConverter("sdqd");
 
 $test->testSwitcher(new lib\SwitchableParameters(array(
 	"phone" => array(50, 50),
@@ -46,6 +47,6 @@ $test->testSwitcher(new lib\SwitchableParameters(array(
 	"other" => array(150, 150)
 ), "phone"));
 
-$test->tuFait("un texte");
+$test->mamamiya();
 
 ?>
