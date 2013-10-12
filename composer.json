@@ -13,9 +13,10 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "onetest/error-php" : "dev-master"
     },
     "suggest": {
-        "lisachenko/go-aop-php": "0.4.0""
+        "lisachenko/go-aop-php": "0.4.0"
     },
     "target-dir": "onetest/php-full-power",
     "autoload": {

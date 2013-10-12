@@ -1,7 +1,10 @@
 <?php
 namespace fullPhp;
 
-require("../src/autoload.php");
+use errorPhp\errorPhp;
+
+require(__DIR__."/../vendor/autoload.php");
+require(__DIR__."/../src/autoload.php");
 
 $phpFull = new lib\PhpFullPower();
 
@@ -46,6 +49,10 @@ $test->testSwitcher(new lib\SwitchableParameters(array(
 	"tablet" => array(100, 100),
 	"other" => array(150, 150)
 ), "phone"));
+
+$errorPhp = new errorPhp();
+
+$errorPhp->register();
 
 $test->mamamiya();
 

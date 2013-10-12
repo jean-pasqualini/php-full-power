@@ -3,3 +3,5 @@ package.xml
 AOP*/
 .c9revisions
 .idea/
+composer.*
+vendor/

@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Registers an autoload for all the classes in Gregwar\Image
+* Registers an autoload for all the classes in fullPhp
 */
 spl_autoload_register(function ($className) {
     $namespace = 'fullPhp';
