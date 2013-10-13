@@ -4,7 +4,7 @@ namespace fullPhp;
 use errorPhp\errorPhp;
 
 require(__DIR__."/../vendor/autoload.php");
-require(__DIR__."/../src/autoload.php");
+require(__DIR__."/../src/fullPhp/autoload.php");
 
 $phpFull = new lib\PhpFullPower();
 
@@ -54,6 +54,6 @@ $errorPhp = new errorPhp();
 
 $errorPhp->register();
 
-$test->mamamiya();
+$test->testeSwitcher();
 
 ?>
