@@ -8,10 +8,6 @@ class PhpFullPower extends \atoum
     {
         $full = new \fullPhp\lib\PhpFullPower();
 
-
-
-        $full = new \fullPhp\lib\PhpFullPower();
-
         $functionalityMock = new \mock\fullPhp\interfaces\FunctionalityInterface;
 
         $isBeforeExecuted = false;
